@@ -1,9 +1,9 @@
 {
   "token": "MTA3NjM5MDc2MDI5NzAyNTU2Ng.Gn9fGD.Up7rXtRv5qkMJeaRqo_qM-689H_8rVyj1Qtk4s",
-  "prefix": "/",
+  "prefix": "0!",
   "serverAddress": "Ronia1.aternos.me",
   "serverPort": "54952",
-  "serverName": "Ronald",
+  "serverName": "Ronia1.aternos.me",
   "updateInterval": "1min",
   "showPlayerSample": true,
   "debugMode": true,
