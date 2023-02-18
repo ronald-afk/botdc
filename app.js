@@ -76,25 +76,33 @@ const updatePin = async(body) => {
 		}
 		playersNow = playersNow.replace(/,\s*$/, "")
 		const cleanMotD = body.motd.replace(/§[0-9,a-z]/g,"");
-		const embed = new Discord.MessageEmbed().setAuthor(`${saddress}:${sport}`).attachFiles(attachment).setThumbnail("attachment://icon.png").addFields({
-			name: 'Motd',
-						value: `${body.motd ? `${cleanMotD}` : '\u200b'}`
-					}, {
-						name: 'Version',
-						value: `${body.server.name ? `${body.server.name}` : '\u200b'}`,
+		const embed = new Discord.MessageEmbed().setAuthor(`Vanevo Server Status`).attachFiles(attachment).setThumbnail("attachment://icon.png").addFields({
+			            name: '<:ip:974203370296455218> IP',
+						value: `\`\`\`${saddress}\`\`\``,
 						inline: true
 					}, {
-						name: 'Status',
-						value: `${(body.online ? "Online" : "Offline")}`,
+						name: '<:port:974202717784379443> Port',
+						value: `\`\`\`${sport}\`\`\``,
+						inline: true
+	            	}, {
+		            	name: '<:description:974203753915879426> Description',
+						value: `\`\`\`${body.motd ? `${cleanMotD}` : '\u200b'}\`\`\``,
+					}, {
+						name: '<:version:974204621243428914> Version',
+						value: `\`\`\`${body.server.name ? `${body.server.name}` : '\u200b'}\`\`\``,
 						inline: true
 					}, {
-						name: 'Players',
-						value: `${body.players.now}/${body.players.max} ${(body.players.sample == null?'':playersNow)}`
-		}, ).setColor("#5b8731").setFooter(`Minecraft Server Status Bot`)
+						name: '<:Signal:973197994105131079> Status',
+						value: `\`\`\`${(body.online ? "Online" : "Offline")}\`\`\``,
+						inline: true
+					}, {
+						name: '<:players:974205282261544970> Players',
+						value: `\`\`\`Online: ${body.players.now}/${body.players.max}\`\`\``
+		}, ).setColor("#40FF19").setFooter(`Vanevo Server Status Bot`)
 		try {
 			const message = await channel.messages.fetch(config.pinId);
 			if(!message) return debug('Unable to find message.');
-			await message.edit(`Status for **${saddress}:${sport}**`, {
+			await message.edit(`Status`, {
 				embed
 			});
 			debug('Updated pin.');
@@ -105,8 +113,16 @@ const updatePin = async(body) => {
 		const imageStream = Buffer.from(defaultFavicon, 'base64');
 		const attachment = new Discord.MessageAttachment(imageStream, "icon.png");
 		const embed = new Discord.MessageEmbed().setAuthor(`${saddress}:${sport}`).attachFiles(attachment).setThumbnail("attachment://icon.png").addFields({
-			name: 'Motd',
-			value: `\u200b`
+			name: 'IP',
+			value: `${saddress}`,
+			inline: true
+		}, {
+			name: 'Port',
+			value: `${sport}`,
+			inline: true
+	    }, {
+			name: 'Description',
+			value: `\u200b`,
 		}, {
 			name: 'Version',
 			value: `\u200b`,
