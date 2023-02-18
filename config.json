@@ -1,0 +1,15 @@
+{
+  "token": "MTA3NjM5MDc2MDI5NzAyNTU2Ng.G-xlFa.VIA3o6fR-ZnCr3A28n3cM_H_QQ0RYMUJ4qUxIY",
+  "prefix": "/",
+  "serverAddress": "Ronia1.aternos.me",
+  "serverPort": "54952",
+  "serverName": "Ronald",
+  "updateInterval": "1min",
+  "showPlayerSample": true,
+  "debugMode": true,
+  "debugLvl": 1,
+  "pinUpdate": true,
+  "pinId": "",
+  "pinGuildId": "987950537330790470",
+  "pinChanId": "1076388269463441478"
+}
